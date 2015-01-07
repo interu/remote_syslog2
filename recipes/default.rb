@@ -7,7 +7,7 @@ remote_file src_filepath do
   checksum node['remote_syslog2']['checksum']
   owner 'root'
   group 'root'
-  mode "0644"
+  mode '0644'
 end
 
 bash 'extract and copy executable' do
@@ -17,12 +17,12 @@ bash 'extract and copy executable' do
     tar xzf #{src_filename} -C #{extract_path}
     mv #{extract_path}/remote_syslog/remote_syslog #{node['remote_syslog2']['install_dir']}
     EOH
-  not_if { ::File.exists?(extract_path) }
+  not_if { ::File.exist?(extract_path) }
 end
 
 file "#{node['remote_syslog2']['install_dir']}/remote_syslog" do
-  owner "root"
-  group "root"
-  mode "0755"
+  owner 'root'
+  group 'root'
+  mode '0755'
   action :touch
 end
