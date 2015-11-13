@@ -1,0 +1,9 @@
+files:
+  - /srv/www/remotty/shared/log/staging.log
+  - /srv/www//shared/log/batch.log
+destination:
+  host: <%= node[:papertrail][:remote_host] %>
+  port: <%= node[:papertrail][:remote_port] %>
+  protocol: tls
+exclude_patterns:
+  - don't log on me
