@@ -4,7 +4,7 @@ extract_path = "#{Chef::Config['file_cache_path']}/remote_syslog2/#{node['remote
 
 remote_file src_filepath do
   source "https://github.com/papertrail/remote_syslog2/releases/download/#{node['remote_syslog2']['version']}/#{node['remote_syslog2']['filename']}"
-  checksum node['remote_syslog2']['checksum']
+  #checksum node['remote_syslog2']['checksum']
   owner 'root'
   group 'root'
   mode '0644'
