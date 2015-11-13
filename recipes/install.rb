@@ -3,7 +3,7 @@ src_filepath = "#{Chef::Config['file_cache_path']}/#{src_filename}"
 extract_path = "#{Chef::Config['file_cache_path']}/remote_syslog2/#{node['remote_syslog2']['checksum']}"
 
 remote_file src_filepath do
-  source "https://github.com/papertrail/remote_syslog2/releases/download/#{node['remote_syslog2']['version']}/remote_syslog_linux_386.tar.gz"
+  source "https://github.com/papertrail/remote_syslog2/releases/download/#{node['remote_syslog2']['version']}/#{node['remote_syslog2']['filename']}"
   checksum node['remote_syslog2']['checksum']
   owner 'root'
   group 'root'
